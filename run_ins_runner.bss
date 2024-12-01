@@ -1,0 +1,6 @@
+#!/bin/bash
+cd  CV_CA_$1
+
+python Reset_Workspace_Folders.py
+python Main.py
+python plot_pt_results.py
