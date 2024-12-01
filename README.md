@@ -1,14 +1,13 @@
-# Uncertainty Quantification in Model Based DL
+# Bayesian KalmanNet: Quantifying Uncertainty in Deep Learning Augmented Kalman Filter
 
-This repository includes the source code used in our paper:
+This branch includes the source code used in our paper:
 
-Yehonatan Dahan, Guy Revach, Jindrich Dunik, and Nir Shlezinger. "[Uncertainty Quantification in Deep Learning Based Kalman Filters](https://arxiv.org/abs/2309.03058)." (2023).
+Yehonatan Dahan, Guy Revach, Jindrich Dunik, and Nir Shlezinger. "[Bayesian KalmanNet: Quantifying Uncertainty in Deep Learning Augmented Kalman Filter](https://arxiv.org/abs/2309.03058)." (2024).
 
 
 ## Abstract
 
-Various algorithms combine deep neural networks (DNNs) and Kalman filters (KFs) to learn from data to track in complex dynamics. Unlike classic KFs, DNN-based systems do not naturally provide the error covariance alongside their estimate, which is of great importance in some applications, e.g., navigation. To bridge this gap, in this work we study error covariance extraction in DNN-aided KFs. We examine three main approaches that are distinguished by the ability to associate internal features with meaningful KF quantities such as the Kalman gain (KG) and prior covariance. We identify the differences between these approaches in their requirements and their effect on the training of the system. Our numerical study demonstrates that the above approaches allow DNN-aided KFs to extract error covariance, with most accurate error prediction provided by model-based/data-driven designs.
-
+Recent years have witnessed a growing interest in tracking algorithms that augment Kalman Filters (KFs) with Deep Neural Networks (DNNs). By transforming KFs into trainable deep learning models, one can learn from data to reliably track a latent state in complex and partially known dynamics. However, unlike classic KFs, conventional DNN-based systems do not naturally provide an uncertainty measure, such as error covariance, alongside their estimates, which is crucial in various applications that rely on KF-type tracking. This work bridges this gap by studying error covariance extraction in DNN-aided KFs. We begin by characterizing how uncertainty can be extracted from existing DNN-aided algorithms and distinguishing between approaches by their ability to associate internal features with meaningful KF quantities, such as the Kalman Gain (KG) and prior covariance. We then identify that uncertainty extraction from existing architectures necessitates additional domain knowledge not required for state estimation. Based on this insight, we propose Bayesian KalmanNet, a novel DNN-aided KF that integrates Bayesian deep learning techniques with the recently proposed KalmanNet and transforms the KF into a stochastic machine learning architecture. This architecture employs sampling techniques to predict error covariance reliably without requiring additional domain knowledge, while retaining KalmanNet's ability to accurately track in partially known dynamics. Our numerical study demonstrates that Bayesian KalmanNet provides accurate and reliable tracking in various scenarios representing partially known dynamic systems.
 
 ## Overview
 
